@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const password = process.argv[2]
-const url ="mongodb+srv://helsinkycourse:" + password + "@cluster0.hdsvz.mongodb.net/phonebookApp?retryWrites=true&w=majority&appName=Cluster0"
+const url = process.env.MONGODB_URI
 
 mongoose.set('strictQuery',false)
 mongoose.connect(url).then(result => {
